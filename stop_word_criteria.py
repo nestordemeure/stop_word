@@ -14,7 +14,7 @@ class StopWordCriteria(StoppingCriteria):
     And: https://github.com/outlines-dev/outlines/blob/main/outlines/generate/api.py
     """
     
-    def __init__(self, tokenizer: AutoTokenizer, prompts: List[str], stop_words: List[str] = [], check_every: int = 20):
+    def __init__(self, tokenizer: AutoTokenizer, prompts: List[str], stop_words: List[str] = [], check_every: int = 1):
         """
         Initializes the StopWordCriteria with the necessary parameters for checking stop words during text generation.
         
