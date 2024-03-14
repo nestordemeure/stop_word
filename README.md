@@ -2,7 +2,7 @@
 
 A [Huggingface transformer's](https://huggingface.co/docs/transformers/en/index) [stopping criteria](https://huggingface.co/docs/transformers/internal/generation_utils#transformers.StoppingCriteria) that halts the generation when a given stop word is encountered.
 
-## Instalation
+## Installation
 
 Put the `stop_word_criteria.py` file in your project.
 
