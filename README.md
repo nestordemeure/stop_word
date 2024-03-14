@@ -12,7 +12,7 @@ Here is an example usage, on a single element batch:
 
 ```python
 # extracting a question
-prompt='If I understand you clearly, your question is :"'
+prompt='If I understand you clearly, your question is: "'
 stop_words = ['"']
 
 # create the stopping criteria
