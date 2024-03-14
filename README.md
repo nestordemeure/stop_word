@@ -19,10 +19,10 @@ stop_words = ['"']
 stopping_criteria = StopWordCriteria(tokenizer=tokenizer, prompts=[prompt], stop_words=stop_words)
 
 # tokenize the prompt
-inputs_tokens = self.tokenizer.encode(prompt, return_tensors="pt")
+inputs_tokens = tokenizer.encode(prompt, return_tensors="pt")
 
 # runs the LLM, producing tokens that represents `inputs_tokens + generated_text + stopword + maybe more`
-output_tokens = self.model.generate(inputs_tokens, stopping_criteria=[stopping_criteria])
+output_tokens = model.generate(inputs_tokens, stopping_criteria=[stopping_criteria])
 
 # extract the generated text from output tokens, cutting the prompt and stop words
 question = stopping_criteria.extract_answers(output_tokens, strip_stopword=True)[0]
