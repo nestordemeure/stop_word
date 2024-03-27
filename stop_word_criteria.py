@@ -29,7 +29,7 @@ class StopWordCriteria(StoppingCriteria):
         self.input_sizes = [self.tokenizer.encode(prompt, return_tensors="pt").size(-1) for prompt in prompts]
         self.stop_words = stop_words
         if len(stop_words) == 0:
-            self.max_stop_word_size
+            self.max_stop_word_size = 0
         else:
             self.max_stop_word_size = max(self.tokenizer.encode(word, return_tensors="pt").size(-1) for word in stop_words)
         self.check_every = check_every
