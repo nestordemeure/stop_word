@@ -28,7 +28,7 @@ class StopWordCriteria(StoppingCriteria):
         self.tokenizer = tokenizer
         self.input_sizes = [self.tokenizer.encode(prompt, return_tensors="pt").size(-1) for prompt in prompts]
         self.stop_words = stop_words
-        self.max_stop_word_size = max(self.tokenizer.encode(word, return_tensors="pt").size(-1) for word in stop_words)
+        self.max_stop_word_size = max((self.tokenizer.encode(word, return_tensors="pt").size(-1) for word in stop_words), default=0)
         self.check_every = check_every
 
     def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor, **kwargs) -> bool:
